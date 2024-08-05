@@ -12,7 +12,7 @@
 }
 .Date,.Time{
     display: flex;
-    margin-block-end: -7%;
+    margin-block-end: -3%;
     margin-block-start: -5%;
 }
 

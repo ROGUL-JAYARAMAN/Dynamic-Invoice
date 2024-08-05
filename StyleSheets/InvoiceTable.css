@@ -49,7 +49,7 @@
     background-color: #cccccc50;
 }
 .invoiceTotal th input {
-    background-color: #f1f1f150;
+    background-color: #f1f1f15b;
 }
 
 
@@ -59,4 +59,10 @@
 
 table input{
     border: none;
+}
+
+@media print{
+    .addButton{
+        visibility: hidden;
+    }
 }
