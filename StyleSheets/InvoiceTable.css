@@ -46,8 +46,12 @@
 }
 
 .invoiceTotal th {
-    background-color: #f4f4f4;
+    background-color: #cccccc50;
 }
+.invoiceTotal th input {
+    background-color: #f1f1f150;
+}
+
 
 .hidden {
     visibility: hidden;
