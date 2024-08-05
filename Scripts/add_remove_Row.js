@@ -79,6 +79,7 @@ function removeRow()
         row[count-1].remove();
         row[count].children[1].children[0].focus();
         count--;
+        netAmountCalculator();
     }
     else
     {
@@ -93,6 +94,7 @@ function remove(currentCell)
         updatesno(currentCell);
         currentCell.parentElement.parentElement.remove();
         count--;
+        netAmountCalculator();
     }
     else
     {

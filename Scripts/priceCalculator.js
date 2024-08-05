@@ -1,4 +1,3 @@
-//Quantity adder or modifier
 function quantityAmount(quantity)
 {
     var rowContent=quantity.parentElement.parentElement;
@@ -19,7 +18,6 @@ function quantityAmount(quantity)
         quantity.parentElement.parentElement.children[4].children[0].value=parseFloat(0.00).toFixed(2);
         netAmountCalculator();
     }
-
 }
 
 //Price per Unit adder or modifier
