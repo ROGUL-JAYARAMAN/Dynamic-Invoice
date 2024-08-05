@@ -1,0 +1,58 @@
+/* Invoice Table Styles */
+.invoiceContainer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.invoiceTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.invoiceTable th, .invoiceTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.invoiceTable th {
+    background-color: #f4f4f4;
+}
+
+/* Add/Remove Buttons */
+.addButton {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.addButton input {
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* Invoice Total Styles */
+.invoiceTotal {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.invoiceTotal th, .invoiceTotal td {
+    border: 1px solid transparent; /* Hide the border */
+    padding: 8px;
+    text-align: left;
+}
+
+.invoiceTotal th {
+    background-color: #f4f4f4;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+table input{
+    border: none;
+}

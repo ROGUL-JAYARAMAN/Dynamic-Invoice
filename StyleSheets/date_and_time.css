@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital@0;1&family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+.date-time {
+    display:flex;
+    flex-direction: column;
+    max-width: 1200px;
+    color: #333;
+    width: max-content;
+    margin: auto auto auto 70%;
+    padding-block-start: 1.5%;
+    padding-block-end: 0.5%;
+}
+.Date,.Time{
+    display: flex;
+    margin-block-end: -7%;
+    margin-block-start: -5%;
+}
+
+.Date div,.Time div{
+    padding-inline-end: 5px;
+}
+
+#date_tit,#time_tit{
+    letter-spacing: 2px;
+    font-weight: bolder;
+    font-variant: small-caps;
+    font-size: 18px;
+    font-family:"Zain";
+    font-weight: 900;
+}
+#date_disp{
+    letter-spacing: 1px;
+    font-family: "Zain";
+    font-size: 18px;
+    font-variant: small-caps;
+    font-weight: 700;
+}
+#time_disp{
+    letter-spacing: 1px;
+    font-family: "Zain";
+    font-size: 18px;
+    font-variant: small-caps;
+    font-weight: 400;
+}
+

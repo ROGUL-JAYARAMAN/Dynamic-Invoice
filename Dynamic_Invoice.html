@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <link rel="stylesheet" href="./StyleSheets/InvoiceTable.css" />
+    <link rel="stylesheet" href="./StyleSheets/date_and_time.css" />
+    <link rel="stylesheet" href="./StyleSheets/contact.css" />
+    <link rel="stylesheet" href="./StyleSheets/Invoice.css" />
+</head>
+<body>
+    <div class="content">
+        <div class="logo" id="logo">
+            <img src="./Images/Logo.png" alt="Logo" height="75px" width="100px">
+        </div>
+        <div class="title-container" id="title">
+            <div class="title">
+                <p>Invoice</p>
+            </div>
+            <div id="details">
+              <div class="detail-row">
+                <div class="detail-item">
+                  <p>jayaramanrogul@gmail.com</p>
+              </div>
+                  <div class="detail-item">
+                      <p>+91 9360504096</p>
+                  </div>
+              </div>
+                <div class="detail-row">
+                  <div class="detail-item">
+                    <p style="font-variant-caps: small-caps;font-family: emoji;font-style: normal;">Mohanur, Namakkal, TamilNadu. 637-015</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Date and Time Section -->
+    <div class="date-time">
+        <div class="Date">
+            <div id="date_tit"><p>Date : </p></div>
+            <div id="date_disp"><p id="Date"></p></div>
+        </div>
+        <div class="Time">
+            <div id="time_tit"><p>Time : </p></div>
+            <div id="time_disp"><p id="Time"></p></div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+        <h2>Buyer's Info</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input class="contactInfo" type="text" id="name" name="name" onkeypress="keydetect(event,this)"/>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input class="contactInfo" type="tel" id="phone" name="phone" onkeypress="keydetect(event,this)" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="contactInfo" type="email" id="email" name="email"  onkeypress="keydetect(event,this)"/>
+                </div>
+                <div class="form-group">
+                    <label for="pincode">Address:</label>
+                    <input class="contactInfo" type="text" id="pincode" name="pincode" onkeypress="keydetect(event,this)"/>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Invoice Table -->
+    <div class="invoiceContainer">
+        <table class="invoiceTable" id="invoiceTable">
+            <thead>
+                <tr id="headerRow">
+                    <th class="rh" id="ch1">Serial Number</th>
+                    <th class="rh" id="ch2">Item Description</th>
+                    <th class="rh" id="ch3">Quantity</th>
+                    <th class="rh" id="ch4">Price per Unit</th>
+                    <th class="rh" id="ch5">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="contentRow">
+                    <td class="rc" id="c1">
+                        <input type="number" value="1" readonly="" />
+                    </td>
+                    <td class="rc" id="c2">
+                        <input type="text" onkeydown="keyDetect(event,this)" />
+                    </td>
+                    <td class="rc" id="c3">
+                        <input
+                            type="number"
+                            onkeydown="keyDetect(event,this)"
+                            onkeyup="quantityAmount(this)"
+                            value="0"
+                        />
+                    </td>
+                    <td class="rc" id="c4">
+                        <input
+                            type="number"
+                            onkeydown="keyDetect(event,this)"
+                            onkeyup="PricePerUnit(this)"
+                            value="0.00"
+                        />
+                    </td>
+                    <td class="amount" id="c5">
+                        <input type="number" value="0.00" readonly="" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="addButton">
+            <input type="button" onclick="addRow()" value="+" id="addRowBtn" />
+            <input type="button" onclick="removeRow()" value="-" id="removeBtn" />
+        </div>
+
+        <table class="invoiceTotal">
+            <tbody>
+                <tr>
+                    <th class="hidden"><input class="hidden" readonly /></th>
+                    <th class="hidden"><input class="hidden" readonly /></th>
+                    <th class="hidden"><input class="hidden" readonly /></th>
+                    <td id="total"><p>Sub Total</p></td>
+                    <th>
+                        <input id="totalValue" type="number" value="0.00" readonly="" />
+                    </th>
+                </tr>
+                <tr>
+                    <th class="hidden"><input class="hidden" readonly /></th>
+                    <td id="Discount">
+                        <p>Discount Percentage %</p>
+                        <input
+                            id="disper"
+                            type="number"
+                            onkeyup="discountCalculator()"
+                            value="0"
+                        />
+                    </td>
+                    <td id="Discount">
+                        <p>Your Saving</p>
+                        <p id="discountpri">0.00</p>
+                    </td>
+                    <td id="disprice"><p>Discounted Price</p></td>
+                    <th>
+                        <input id="distot" type="number" value="0.00" readonly="" />
+                    </th>
+                </tr>
+                <tr>
+                    <th class="hidden"><input class="hidden" readonly /></th>
+                    <td id="GST"><p>Tax Percentage : 18%</p></td>
+                    <td id="taxRate">
+                        <p>Tax Rate </p>
+                        <p id="GSTValue">0.00</p>
+                    </td>
+                    <td id="GST"><p>GST added price</p></td>
+                    <th>
+                        <input id="GSTValuetot" type="number" value="0.00" readonly="" />
+                    </th>
+                </tr>
+                <tr>
+                    <th class="hidden"><input class="hidden" readonly /></th>
+                    <th class="hidden"><input class="hidden" readonly /></th>
+                    <th class="hidden"><input class="hidden" readonly /></th>
+                    <td id="netTotal"><p>Net Total</p></td>
+                    <th>
+                        <p id="nettot">0.00</p>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./Scripts/add_remove_Row.js"></script>
+    <script src="./Scripts/priceCalculator.js"></script>
+    <script src="./Scripts/keyEvent.js"></script>
+    <script src="./Scripts/contactInformation.js"></script>
+    <script src="./Scripts/date_and_time.js"></script>
+</body>
+</html>

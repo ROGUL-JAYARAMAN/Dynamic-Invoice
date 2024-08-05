@@ -1,0 +1,50 @@
+/* Contact Form Styles */
+.contact-form {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 1.5em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.contact-form h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.contact-form .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contact-form .form-group {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 1em;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="email"] {
+    width: 80%;
+    padding: 8px;
+    border: 1px none #ddd;
+    border-radius: 4px;
+}
+
+.contact-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px none #ddd;
+    border-radius: 4px;
+}
